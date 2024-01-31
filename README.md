@@ -27,22 +27,11 @@ It is an implementation of evolutionary strategy to solve knapsack problem
     * **Command-line arguments or configuration options.**
     * **Examples of typical usage scenarios.**
 
-## Testing
-
-* **If applicable, explain how to run tests, including:**
-    * **Commands or scripts for executing tests.**
-    * **Test coverage or validation metrics.**
-
 ## Contributing
 
 * **If open-source, provide guidelines for contributing to the project, including:**
     * **How to submit issues or pull requests.**
     * **Coding style and conventions.**
-
-## License
-
-* **State the project's license (e.g., MIT, GPL).**
-* **Include a link to the full license text.**
 
 ## Contact
 
