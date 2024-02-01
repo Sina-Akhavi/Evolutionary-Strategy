@@ -2,9 +2,9 @@
 #include "evolutionary_for_mahak.h"
 
 int sc_main(int argc, char* argv[]) {
-    // mahak evol1("evolutionary_strategy");
-    // evol1.initialize_population();
-    // evol1.print_population();
+    mahak evol1("evolutionary_strategy");
+    evol1.initialize_population();
+    evol1.print_population();
     // ** test check_and_repair_max_weight **
 
     // mahak evol1("evolutionary_strategy");
@@ -112,6 +112,14 @@ int sc_main(int argc, char* argv[]) {
 
     // printf("\n-----------------------------------------\n");
     // evol1.print_population();
+
+    // ** test3 check_bag_limitation_and_repair **
+    
+    // evol1.reproduce();
+
+    // evol1.print_population();
+    // printf("----------------------------------\n");
+    // evol1.print_T();
 
 
     return 0;
