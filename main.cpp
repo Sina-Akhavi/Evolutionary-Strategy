@@ -19,7 +19,7 @@ void evaluate();
 
 double choose_best_price(double population[][OBJECT_NUMBERS], int m, int n);
 
-void initialize();
+void initialise();
 
 void reproduce();
 
@@ -27,40 +27,78 @@ void repair();
 
 void pick_best_u_individuals();
 
+
+
 int sc_main(int argc, char* argv[]) {
     
+    initialise();
+
+    int i;
+    int num_generations = 10;
+    for (i = 0; i < num_generations; i++) {
+        printf("\n              ------------------ %d Generation ------------------\n\n", i + 1);
+        mahak_obj.print_population();
+        reproduce();
+        mahak_obj.print_T();
+        
+        mahak_obj.mutate();
+        printf("\n--- After Mutation ---\n");
+        mahak_obj.print_T();
+
+        repair();
+        printf("\n------After Repair-----\n");
+        mahak_obj.print_T();
+
+        printf("\n\n--Choosing Best mu Individuals Steps-- \n");
+        pick_best_u_individuals();
+        printf("-- best mu individuals -- \n");
+        mahak_obj.print_population();
+
+
+    }
+
+    // -------------------------- Test choose_best_price --------------------------
     // initialize();
-
     // mahak_obj.print_population();
-
     // reproduce();
 
+    // mahak_obj.print_T();
     // repair();
-
-    // pick_best_u_individuals();
+    // printf("\n-----------------After Repair--------------------");
 
     // mahak_obj.print_population();
     // mahak_obj.print_T();
+    
+    // pick_best_u_individuals();
 
-    // -------------------------- Test choose_best_price --------------------------
-    initialize();
-    mahak_obj.print_population();
-    reproduce();
+    // mahak_obj.print_population();
 
-    mahak_obj.print_T();
-    repair();
-    printf("\n-----------------After Repair--------------------");
+    // -------------------------- Test mutation --------------------------
 
-    mahak_obj.print_population();
-    mahak_obj.print_T();
+    // initialize();
+    // mahak_obj.print_population();
+    // reproduce();
 
-    pick_best_u_individuals();
+    // mahak_obj.print_T();
+    // mahak_obj.mutate();
+    // // mahak_obj.mutate();
+    // mahak_obj.print_T();
 
-    mahak_obj.print_population();
+    // repair();
+    // printf("\n-----------------After Repair--------------------\n");
+
+    // mahak_obj.print_population();
+    // mahak_obj.print_T();
+    
+    // pick_best_u_individuals();
+
+    // mahak_obj.print_population();
+
+    
+
 
     return 0;
 }
-
 
 void print_population(double population[][OBJECT_NUMBERS], int rows, int cols) {
     int i, j;
@@ -111,8 +149,9 @@ double choose_best_price(double population[][OBJECT_NUMBERS], int m, int n) {
     return max_sum;
 }
 
-void initialize() {
+void initialise() {
     mahak_obj.initialize_population();
+    mahak_obj.initialize();
 }
 
 void reproduce() {
@@ -148,3 +187,5 @@ void pick_best_u_individuals() {
 
     mahak_obj.go_next_generation(best_u_members, U); 
 }
+
+

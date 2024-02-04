@@ -3,8 +3,8 @@
 
 int sc_main(int argc, char* argv[]) {
     mahak evol1("evolutionary_strategy");
-    evol1.initialize_population();
-    evol1.print_population();
+    // evol1.initialize_population();
+    // evol1.print_population();
     // ** test check_and_repair_max_weight **
 
     // mahak evol1("evolutionary_strategy");
@@ -121,6 +121,18 @@ int sc_main(int argc, char* argv[]) {
     // printf("----------------------------------\n");
     // evol1.print_T();
 
+    // ** test scale_to_0_1 **
+    // int m = 7;
+    // double array[] = {1, 2, 3, 7, 2, 9, 10};
+    // evol1.scale_to_0_1(array, m, 2);
 
+    // int i;
+    // for (i = 0; i < m; i++) {
+    //     printf("%f ", array[i]);
+    // }
+
+    // ** test scale_to_0_1 **
+    double value = evol1.pdf(0.03, 0, 1);
+    printf("%f ", value);
     return 0;
 }
